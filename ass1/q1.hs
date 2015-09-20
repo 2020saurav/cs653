@@ -4,13 +4,13 @@ import Data.List as List
 noiseWordList = ["a", "an", "the"]
 
 wordCount :: String -> Int
-wordCount content = length $ words content
+wordCount = length . words
 
 distinctWordCount :: String -> Int
-distinctWordCount content = length . Set.toList . Set.fromList . words $ content
+distinctWordCount = length . Set.toList . Set.fromList . words
 
 wordFrequency :: String -> [(String, Int)]
-wordFrequency content = List.map(\x -> (head x, length x)) . group . sort . words . removeNoise $ content
+wordFrequency = List.map(\x -> (head x, length x)) . group . sort . words . removeNoise
 
 removeNoise :: String -> String
 removeNoise content = unwords $ listDiff (words content) noiseWordList
