@@ -20,6 +20,7 @@
 ### Build and Run
 - `runhaskell assignment.hs`
 - Enter the path to the file to be analyzed. `/path/to/file`
+
 ### Output
 - First line is the word count of the file.
 - Second line is list of distinct words in the file
